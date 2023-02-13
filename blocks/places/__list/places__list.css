@@ -1,0 +1,10 @@
+.places__list {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 17px;
+}

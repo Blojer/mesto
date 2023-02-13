@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Mesto</title>
+  </head>
+  <body>
+    <div class="background">
+      <div class="page">
+        <header class="header">
+          <img src="./images/logo.svg" alt="Логотип" class="header__logo" />
+        </header>
+        <main>
+          <section class="profile">
+            <section class="profile__info">
+              <img src="./images/avatar.png" alt="Фото профиля" class="profile__avatar" />
+              <section class="profile__data">
+                <h1 class="profile__full-name">Жак-Ив Кусто</h1>
+                <p class="profile__hobby">Исследователь океана</p>
+                <button class="profile__edit-button"></button>
+              </section>
+            </section>
+            <button class="add-ellement"></button>
+          </section>
+          <section class="places">
+            <ul class="places__list">
+              <li class="place">
+                <img src="./images/murmansk.png" alt="Мурманск" class="place__image" />
+                <div class="place__block">
+                  <h2 class="place__title">Мурманск</h2>
+                  <button class="place__button-like"></button>
+                </div>
+              </li>
+              <li class="place">
+                <img src="./images/novosibirsk.png" alt="Новосибирск" class="place__image" />
+                <div class="place__block">
+                  <h2 class="place__title">Новосибирск</h2>
+                  <button class="place__button-like"></button>
+                </div>
+              </li>
+              <li class="place">
+                <img src="./images/sakhalin.png" alt="Сахалин" class="place__image" />
+                <div class="place__block">
+                  <h2 class="place__title">Сахалин</h2>
+                  <button class="place__button-like"></button>
+                </div>
+              </li>
+              <li class="place">
+                <img src="./images/vladivistok.png" alt="Владивосток" class="place__image" />
+                <div class="place__block">
+                  <h2 class="place__title">Владивосток</h2>
+                  <button class="place__button-like"></button>
+                </div>
+              </li>
+              <li class="place">
+                <img src="./images/moskva.png" alt="Москва" class="place__image" />
+                <div class="place__block">
+                  <h2 class="place__title">Москва</h2>
+                  <button class="place__button-like"></button>
+                </div>
+              </li>
+              <li class="place">
+                <img src="./images/ekaterinburg.png" alt="Екатеринбург" class="place__image" />
+                <div class="place__block">
+                  <h2 class="place__title">Екатеринбург</h2>
+                  <button class="place__button-like"></button>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </main>
+        <footer class="footer">
+          <p class="footer__copyright">© 2020 Mesto Russia</p>
+        </footer>
+        <div class="popup">
+          <div class="popup__container">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form action="" class="popup__form" name="popup__profile-info">
+              <input type="text" class="popup__full-name" value="" placeholder="Имя" />
+              <input type="text" class="popup__hobby" value="" placeholder="О себе" />
+              <input type="submit" class="popup__save" value="Сохранить" />
+            </form>
+            <button class="popup__close-button"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>

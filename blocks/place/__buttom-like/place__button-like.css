@@ -1,0 +1,20 @@
+.place__button-like {
+  height: 22px;
+  width: 29px;
+  border: none;
+  background-color: #fff;
+  background-image: url(../../../images/button-like.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 29px 16px 0 0;
+}
+
+.place__button-like:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.place__button-like:active {
+  background-image: url(../../../images/button-like_active.svg);
+  opacity: 1;
+}
