@@ -6,10 +6,7 @@
   background-image: url(../../../images/edit-button.svg);
   background-repeat: no-repeat;
   background-position: center;
-  align-self: center;
-  position: absolute;
-  right: -44px;
-  top: 14px;
+  margin-bottom: 21px;
 }
 
 .profile__edit-button:hover {
@@ -21,7 +18,5 @@
   .profile__edit-button {
     width: 18px;
     height: 18px;
-    right: -28px;
-    top: 6px;
   }
 }

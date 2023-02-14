@@ -8,6 +8,7 @@
   font-size: 18px;
   line-height: 22px;
   border-radius: 2px;
+  border: none;
 }
 
 .popup__save:hover {
