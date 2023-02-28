@@ -13,8 +13,3 @@
   opacity: 0.5;
   cursor: pointer;
 }
-
-.place__button-like:active {
-  background-image: url(../../../images/button-like_active.svg);
-  opacity: 1;
-}

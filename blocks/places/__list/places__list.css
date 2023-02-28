@@ -2,9 +2,9 @@
   list-style-type: none;
   margin: 0 auto;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
   row-gap: 20px;
   column-gap: 17px;
+  grid-template-columns: repeat(auto-fit, 282px);
+  justify-content: center;
 }
