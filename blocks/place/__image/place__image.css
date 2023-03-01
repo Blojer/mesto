@@ -3,5 +3,10 @@
   height: 282px;
   object-fit: cover;
   object-position: center top;
-  background-color: #fff;
+  background-color: #000;
+  color: #fff;
+}
+
+.place__image:hover {
+  cursor: pointer;
 }

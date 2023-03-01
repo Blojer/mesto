@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./pages/index.css" />
+    <script src="./scripts/constants.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
     <title>Mesto</title>
   </head>
   <body class="background">
@@ -20,9 +22,17 @@
               <h1 class="profile__full-name">Жак-Ив Кусто</h1>
               <p class="profile__hobby">Исследователь океана</p>
             </div>
-            <button class="profile__edit-button" type="button"></button>
+            <button
+              class="profile__edit-button"
+              type="button"
+              aria-label="Редактировать профиль"
+            ></button>
           </div>
-          <button class="profile__add-ellement" type="button"></button>
+          <button
+            class="profile__add-ellement"
+            type="button"
+            aria-label="Добавить карточку"
+          ></button>
         </section>
         <section class="places">
           <ul class="places__list"></ul>
@@ -50,16 +60,18 @@
               class="popup__form popup__form_type_name"
               name="popup-form-name"
               placeholder="Имя"
+              required
             />
             <input
               type="text"
               class="popup__form popup__form_type_hobby"
               name="popup-form-hobby"
               placeholder="О себе"
+              required
             />
             <input type="submit" class="popup__save" name="popup-save" value="Сохранить" />
           </form>
-          <button class="popup__close-button" type="button"></button>
+          <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
         </div>
       </div>
       <div class="popup popup_type_place">
@@ -71,26 +83,27 @@
               class="popup__form popup__form_type_name-place"
               name="popup-form-name-place"
               placeholder="Название"
+              required
             />
             <input
-              type="text"
+              type="url"
               class="popup__form popup__form_type_link-place"
               name="popup-form-link-image"
               placeholder="Ссылка на картинку"
+              required
             />
             <input type="submit" class="popup__save" name="popup-save" value="Сохранить" />
           </form>
-          <button class="popup__close-button" type="button"></button>
+          <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
         </div>
       </div>
       <div class="popup popup_type_gallery">
         <div class="popup__container">
           <img src="#" alt="#" class="popup__image" />
           <h3 class="popup__image-header"></h3>
-          <button class="popup__close-button" type="button"></button>
+          <button class="popup__close-button" type="button" aria-label="Закрыть"></button>
         </div>
       </div>
     </div>
-    <script src="./scripts/index.js"></script>
   </body>
 </html>
