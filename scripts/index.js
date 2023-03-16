@@ -7,38 +7,47 @@ const popups = document.querySelectorAll('.popup');
 const popupCloseButtons = document.querySelectorAll('.popup__close-button');
 const formElementProfile = document.querySelector('form[name = "popup-profile-info"]');
 const formElementPlace = document.querySelector('form[name = "popup-card-place"]');
-const inputNameProfile = document.querySelector('.popup__form_type_name');
-const inputHobbyProfile = document.querySelector('.popup__form_type_hobby');
-const inputNamePlace = document.querySelector('.popup__form_type_name-place');
-const inputLinkPlace = document.querySelector('.popup__form_type_link-place');
+const inputNameProfile = document.querySelector('.popup__input_type_name');
+const inputHobbyProfile = document.querySelector('.popup__input_type_hobby');
+const inputNamePlace = document.querySelector('.popup__input_type_name-place');
+const inputLinkPlace = document.querySelector('.popup__input_type_link-place');
 const valueNameProfile = document.querySelector('.profile__full-name');
 const valueHobbyProfile = document.querySelector('.profile__hobby');
 const placeTemplate = document.querySelector('#place').content.querySelector('.place');
 const editPlaceElement = document.querySelector('.places__list');
 
-function openPopup(popupElement) {
+const closePopupEscape = evt => {
+  if (evt.key === 'Escape') {
+    const popupOpen = document.querySelector('.popup_opened');
+    closePopup(popupOpen);
+  }
+};
+
+const openPopup = (popupElement, obj) => {
   popupElement.classList.add('popup_opened');
-}
+  document.addEventListener('keydown', closePopupEscape);
+};
 
-function closePopup(popupElement) {
+const closePopup = popupElement => {
   popupElement.classList.remove('popup_opened');
-}
+  document.removeEventListener('keydown', closePopupEscape);
+};
 
-editingProfile.addEventListener('click', function () {
+editingProfile.addEventListener('click', () => {
   openPopup(popupProfile);
   inputNameProfile.value = valueNameProfile.textContent;
   inputHobbyProfile.value = valueHobbyProfile.textContent;
 });
 
-popupCloseButtons.forEach(function (item) {
+popupCloseButtons.forEach(item => {
   item.addEventListener('click', function () {
     const popupClose = this.closest('.popup');
     closePopup(popupClose);
   });
 });
 
-popups.forEach(function (item) {
-  item.addEventListener('click', function (evt) {
+popups.forEach(item => {
+  item.addEventListener('mousedown', function (evt) {
     const clickPopup = evt.target;
     if (clickPopup.classList.contains('popup')) {
       closePopup(this);
