@@ -3,10 +3,13 @@ const addElementePlace = document.querySelector('.profile__add-ellement');
 const popupProfile = document.querySelector('.popup_type_profile');
 const popupPlace = document.querySelector('.popup_type_place');
 const popupGallery = document.querySelector('.popup_type_gallery');
+const popupGalleryImage = popupGallery.querySelector('.popup__image');
+const popupGalleryImageHeading = popupGallery.querySelector('.popup__image-header');
 const popups = document.querySelectorAll('.popup');
 const popupCloseButtons = document.querySelectorAll('.popup__close-button');
 const formElementProfile = document.querySelector('form[name = "popup-profile-info"]');
 const formElementPlace = document.querySelector('form[name = "popup-card-place"]');
+const submitButtonPlace = formElementPlace.querySelector('.popup__save');
 const inputNameProfile = document.querySelector('.popup__input_type_name');
 const inputHobbyProfile = document.querySelector('.popup__input_type_hobby');
 const inputNamePlace = document.querySelector('.popup__input_type_name-place');
@@ -23,7 +26,11 @@ const closePopupEscape = evt => {
   }
 };
 
-const openPopup = (popupElement, obj) => {
+const openPopup = popupElement => {
+  const forms = Array.from(document.querySelectorAll(validationConfig.formSelector));
+  forms.forEach(form => {
+    clearInputError(form, validationConfig);
+  });
   popupElement.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupEscape);
 };
@@ -34,9 +41,9 @@ const closePopup = popupElement => {
 };
 
 editingProfile.addEventListener('click', () => {
-  openPopup(popupProfile);
   inputNameProfile.value = valueNameProfile.textContent;
   inputHobbyProfile.value = valueHobbyProfile.textContent;
+  openPopup(popupProfile);
 });
 
 popupCloseButtons.forEach(item => {
@@ -56,8 +63,8 @@ popups.forEach(item => {
 });
 
 addElementePlace.addEventListener('click', function () {
-  openPopup(popupPlace);
   formElementPlace.reset();
+  openPopup(popupPlace);
 });
 
 function handleFormProfileSubmit(evt) {
@@ -99,9 +106,9 @@ function createPlace(item) {
     event.target.classList.toggle('place__button-like_active');
   });
   placeImage.addEventListener('click', function () {
-    document.querySelector('.popup__image').src = this.src;
-    document.querySelector('.popup__image').alt = this.alt;
-    document.querySelector('.popup__image-header').textContent = this.alt;
+    popupGalleryImage.src = this.src;
+    popupGalleryImage.alt = this.alt;
+    popupGalleryImageHeading.textContent = this.alt;
     openPopup(popupGallery);
   });
   return placeElement;
