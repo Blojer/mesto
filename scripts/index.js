@@ -27,10 +27,6 @@ const closePopupEscape = evt => {
 };
 
 const openPopup = popupElement => {
-  const forms = Array.from(document.querySelectorAll(validationConfig.formSelector));
-  forms.forEach(form => {
-    clearInputError(form, validationConfig);
-  });
   popupElement.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupEscape);
 };
@@ -43,6 +39,7 @@ const closePopup = popupElement => {
 editingProfile.addEventListener('click', () => {
   inputNameProfile.value = valueNameProfile.textContent;
   inputHobbyProfile.value = valueHobbyProfile.textContent;
+  removeValidationErrors(formElementProfile, validationConfig);
   openPopup(popupProfile);
 });
 
@@ -64,6 +61,7 @@ popups.forEach(item => {
 
 addElementePlace.addEventListener('click', function () {
   formElementPlace.reset();
+  removeValidationErrors(formElementPlace, validationConfig);
   openPopup(popupPlace);
 });
 
