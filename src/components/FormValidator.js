@@ -1,6 +1,6 @@
 export default class FormValidation {
-  constructor(popup, rest) {
-    this._popup = popup;
+  constructor({ popupSelector, rest }) {
+    this._popup = document.querySelector(popupSelector);
     this._form = this._popup.querySelector(rest.formSelector);
     this._input = rest.inputSelector;
     this._button = this._form.querySelector(rest.submitButtonSelector);
