@@ -9,14 +9,15 @@ export default class FormValidation {
   }
 
   _showInputError(input) {
-    this._errorTextElement = this._form.querySelector(`#${input.name}-error`);
+    console.log(input.id);
+    this._errorTextElement = this._form.querySelector(`#${input.id}-error`);
     this._errorTextElement.classList.add(this._rest.errorClass);
     input.classList.add(this._rest.inputErrorClass);
     this._errorTextElement.textContent = input.validationMessage;
   }
 
   _hideInputError(input) {
-    this._errorTextElement = this._form.querySelector(`#${input.name}-error`);
+    this._errorTextElement = this._form.querySelector(`#${input.id}-error`);
     this._errorTextElement.classList.remove(this._rest.errorClass);
     input.classList.remove(this._rest.inputErrorClass);
     this._errorTextElement.textContent = '';
