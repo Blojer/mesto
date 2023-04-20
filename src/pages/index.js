@@ -11,7 +11,7 @@ import {
   addElementePlace,
   inputNameProfile,
   inputHobbyProfile
-} from '../components/constants.js';
+} from '../constants/constants.js';
 import './index.css';
 
 const userInfo = new UserInfo('.profile__full-name', '.profile__hobby');
@@ -20,18 +20,20 @@ const userInfo = new UserInfo('.profile__full-name', '.profile__hobby');
 const popupProfile = new PopupWithForm({
   selectorPopup: '.popup_type_profile',
   handleFormSubmit: formValues => {
-    userInfo.setUserInfo(formValues.name, formValues.hobby);
+    userInfo.setUserInfo(formValues);
   }
 });
 popupProfile.setEventListener();
 
-editingProfile.addEventListener('click', () => {
+const handleProfileEditing = () => {
   const valueProfile = userInfo.getUserInfo();
   inputNameProfile.value = valueProfile.name;
   inputHobbyProfile.value = valueProfile.hobby;
   profileFormValidator.removeValidationErrors();
   popupProfile.open();
-});
+};
+
+editingProfile.addEventListener('click', handleProfileEditing);
 
 const cardList = new Section(
   {
@@ -54,29 +56,25 @@ const createCard = item => {
     '#place'
   );
 
-  const newCard = card.generateCard();
-  return newCard;
+  return card.generateCard();
 };
 
 // попап добавления новой карточки
 const popupPlace = new PopupWithForm({
   selectorPopup: '.popup_type_place',
   handleFormSubmit: formValues => {
-    const data = {
-      name: formValues['name-place'],
-      link: formValues['link']
-    };
-    const cardElement = createCard(data);
-    cardList.addItem(cardElement);
+    cardList.addItem(createCard(formValues));
   }
 });
 
 popupPlace.setEventListener();
 
-addElementePlace.addEventListener('click', function () {
+const handleAddCard = () => {
   placeFormValidator.removeValidationErrors();
   popupPlace.open();
-});
+};
+
+addElementePlace.addEventListener('click', handleAddCard);
 
 // Добавление карточек из массива
 cardList.renderItems();
