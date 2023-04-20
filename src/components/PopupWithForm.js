@@ -28,4 +28,3 @@ export default class PopupWithForm extends Popup {
   }
 }
 
-// input => (formValues[input.name] = input.value)
