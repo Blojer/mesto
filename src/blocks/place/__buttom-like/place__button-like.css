@@ -1,12 +1,13 @@
 .place__button-like {
-  height: 22px;
-  width: 29px;
+  height: 19px;
+  width: 22px;
   border: none;
   background-color: #fff;
   background-image: url(../../../images/button-like.svg);
   background-repeat: no-repeat;
   background-position: center;
-  margin: 29px 16px 0 0;
+  margin: 0;
+  transition: opacity 0.4s linear;
 }
 
 .place__button-like:hover {

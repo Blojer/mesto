@@ -4,12 +4,12 @@ export default class FormValidation {
     this._form = this._popup.querySelector(rest.formSelector);
     this._input = rest.inputSelector;
     this._button = this._form.querySelector(rest.submitButtonSelector);
+    this._textButton = this._button.textContent;
     this._rest = rest;
     this._inputs = Array.from(this._form.querySelectorAll(this._input));
   }
 
   _showInputError(input) {
-    console.log(input.id);
     this._errorTextElement = this._form.querySelector(`#${input.id}-error`);
     this._errorTextElement.classList.add(this._rest.errorClass);
     input.classList.add(this._rest.inputErrorClass);
