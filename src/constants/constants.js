@@ -9,6 +9,4 @@ export const validationConfig = {
 
 export const editingProfile = document.querySelector('.profile__edit-button');
 export const addElementePlace = document.querySelector('.profile__add-ellement');
-export const inputNameProfile = document.querySelector('.popup__input_type_name');
-export const inputHobbyProfile = document.querySelector('.popup__input_type_hobby');
 export const editingAvatar = document.querySelector('.profile__avatar-button');
